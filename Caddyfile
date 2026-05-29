@@ -19,6 +19,11 @@
         file_server
     }
 
+    @bash host bash.landonfoister.com bash.landonfoister.localhost
+    handle @bash {
+        reverse_proxy bashupload:80
+    }
+
     handle {
         root * /srv/static
         try_files {path} {path}/ {path}.html =404

@@ -15,6 +15,18 @@ services:
       - ./visual-board:/srv/static/visual-board:ro
       - ./blog:/srv/static/blog:ro
       - ./assets:/srv/static/assets:ro
+    depends_on:
+      - bashupload
+    restart: unless-stopped
+
+  bashupload:
+    image: ghcr.io/mainfrezzer/bashupload
+    container_name: landonfoister-bashupload
+    environment:
+      # Max upload size. Note: Cloudflare's free plan caps request bodies at 100MB.
+      - UPLOADSIZE=100M
+    volumes:
+      - bashupload-files:/app/files
     restart: unless-stopped
 
   cloudflared:
@@ -26,3 +38,6 @@ services:
     depends_on:
       - web
     restart: unless-stopped
+
+volumes:
+  bashupload-files:
