@@ -1,0 +1,28 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: landonfoister-web
+    container_name: landonfoister-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./index.html:/srv/static/index.html:ro
+      - ./projects:/srv/static/projects:ro
+      - ./certifications:/srv/static/certifications:ro
+      - ./resume:/srv/static/resume:ro
+      - ./visual-board:/srv/static/visual-board:ro
+      - ./blog:/srv/static/blog:ro
+      - ./assets:/srv/static/assets:ro
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: landonfoister-cloudflared
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - web
+    restart: unless-stopped

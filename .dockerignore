@@ -1,0 +1,15 @@
+.git
+.gitignore
+.github
+.claude
+.vscode
+**/node_modules
+**/.docusaurus
+**/build
+**/dist
+**/.astro
+README.md
+CLAUDE.md
+docker-compose.yml
+Dockerfile
+.dockerignore

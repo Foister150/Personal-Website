@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Landon Foister</title>
+    <meta name="description" content="Security and infrastructure projects by Landon Foister, including Coordinate and a cyber range home lab.">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/site.css?v=6">
+    <script src="/assets/site.js" defer></script>
+    <script src="/assets/terminal.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell">
+        <a class="brand" href="/" aria-label="Landon Foister home">
+          <span class="brand-name">LANDON FOISTER</span>
+          <span class="brand-role">// SECURITY RESEARCH</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">MENU [ + ]</button>
+        <nav aria-label="Primary navigation">
+          <ul class="site-nav" id="primary-navigation">
+            <li><a href="/projects/" aria-current="page">01 PROJECTS</a></li>
+            <li><a href="/assets/landon-foister-resume-public.pdf">02 RESUME</a></li>
+            <li><a href="/blog/">03 BLOG</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="shell page-main" id="main">
+      <div class="status-bar">
+        <span>COOKEVILLE, TN / CST</span>
+        <span>TOOLS + INFRASTRUCTURE</span>
+      </div>
+      <header class="page-hero">
+        <div>
+          <p class="page-label">01 / PROJECTS</p>
+          <h1 class="page-title">BUILD LOG</h1>
+          <p class="page-intro">Selected technical work supporting security research, cyber defense practice, and reliable administration across Linux and virtualized environments.</p>
+        </div>
+      </header>
+      <section class="project-grid" aria-label="Project case studies">
+        <article class="panel project-feature" id="coordinate">
+          <div>
+            <span class="panel-id">PROJECT 001 / SOFTWARE</span>
+            <h2>COORDINATE</h2>
+            <p>Custom Golang application built for Linux administration through SSH connections. Coordinate supports remote command execution, script execution, file transfer, key authentication, password changes, and sudo escalation workflows.</p>
+            <div class="tags"><span class="tag">GOLANG</span><span class="tag">SSH</span><span class="tag">LINUX</span><span class="tag">AUTOMATION</span></div>
+            <a class="panel-link" href="https://github.com/Foister150/coordinate-foister" target="_blank" rel="noreferrer">VIEW SOURCE ON GITHUB -&gt;</a>
+          </div>
+          <aside class="project-aside">
+            <h3>SECURITY RELEVANCE</h3>
+            <ul class="fact-list">
+              <li>Centralizes repeatable administrative actions across Linux targets.</li>
+              <li>Uses SSH connections and authentication workflows for controlled access.</li>
+              <li>Reflects automation work applied in cyber defense environments.</li>
+            </ul>
+          </aside>
+        </article>
+        <article class="panel project-terminal" id="coordinate-shell" aria-label="Coordinate sandbox terminal">
+          <header class="term-bar">
+            <span class="panel-id">PROJECT 001 / SHELL</span>
+            <span class="term-status">LIVE / SANDBOX</span>
+          </header>
+          <p class="term-hint">Type <code>help</code> to see what's installed. Objective: retrieve the flag from the hosts on 10.10.20.0/24 using username: <code>root</code> and password: <code>password</code>.</p>
+          <div class="term-screen" id="term-screen" role="log" aria-live="polite" aria-label="Terminal output"></div>
+          <form class="term-prompt-line" id="term-form" autocomplete="off">
+            <div class="term-prompt-top" id="term-prompt-top" aria-hidden="true"></div>
+            <div class="term-prompt-bottom">
+              <span class="term-prompt-prefix" id="term-prompt-prefix" aria-hidden="true"></span>
+              <label class="visually-hidden" for="term-input">Terminal input</label>
+              <input class="term-input" id="term-input" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+            </div>
+          </form>
+        </article>
+        <article class="panel project-feature" id="home-lab">
+          <div>
+            <span class="panel-id">PROJECT 002 / INFRASTRUCTURE</span>
+            <h2>HOME LAB</h2>
+            <p>Proxmox server environment hosting the CyberEagles Competition Club cyber range. It supports offensive and defensive practice environments, security research, and infrastructure deployment automation.</p>
+            <div class="tags"><span class="tag">PROXMOX</span><span class="tag">TERRAFORM</span><span class="tag">SALTSTACK</span><span class="tag">PFSENSE</span><span class="tag">TAILSCALE</span></div>
+          </div>
+          <aside class="project-aside">
+            <h3>ENVIRONMENT NOTES</h3>
+            <ul class="fact-list">
+              <li>Partitions network activity with open-source firewall solutions.</li>
+              <li>Automates infrastructure deployments for repeatable practice ranges.</li>
+              <li>Provides remote access into projects while enabling traffic monitoring.</li>
+            </ul>
+          </aside>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

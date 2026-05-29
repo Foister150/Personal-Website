@@ -1,0 +1,17 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+cloudflaresetup.txt
+
+# Node / Docusaurus
+blog-site/node_modules/
+blog-site/build/
+blog-site/.docusaurus/
+blog-site/.cache-loader/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

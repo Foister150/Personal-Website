@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* ===== Cyber-brutalist palette — match landonfoister.com ===== */
+
+:root,
+[data-theme='dark'] {
+  --void: #080808;
+  --raised: #0d0d0d;
+  --paper: #f2f0ea;
+  --red: #ff3b32;
+  --grey: #737373;
+  --line: #c8c8c8;
+  --line-soft: rgba(200, 200, 200, 0.25);
+  --red-soft: rgba(255, 59, 50, 0.16);
+  --display: 'Space Grotesk', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --sans: 'Inter', Arial, sans-serif;
+  --max: 1280px;
+
+  /* Infima overrides */
+  --ifm-background-color: #080808;
+  --ifm-background-surface-color: #0d0d0d;
+  --ifm-color-content: #f2f0ea;
+  --ifm-color-content-secondary: #c8c8c8;
+
+  --ifm-color-primary: #ff3b32;
+  --ifm-color-primary-dark: #ff1f15;
+  --ifm-color-primary-darker: #ff100a;
+  --ifm-color-primary-darkest: #d80700;
+  --ifm-color-primary-light: #ff574f;
+  --ifm-color-primary-lighter: #ff665e;
+  --ifm-color-primary-lightest: #ff8f8a;
+
+  --ifm-font-family-base: 'Inter', Arial, sans-serif;
+  --ifm-heading-font-family: 'Space Grotesk', Arial, sans-serif;
+  --ifm-font-family-monospace: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --ifm-link-color: #ff3b32;
+  --ifm-link-hover-color: #ff3b32;
+  --ifm-link-decoration: none;
+
+  --ifm-navbar-background-color: #080808;
+  --ifm-navbar-link-color: #c8c8c8;
+  --ifm-navbar-link-hover-color: #ff3b32;
+  --ifm-navbar-height: auto;
+  --ifm-navbar-padding-vertical: 22px;
+
+  --ifm-footer-background-color: #080808;
+  --ifm-footer-color: #737373;
+
+  --ifm-code-background: rgba(255, 59, 50, 0.16);
+  --ifm-code-color: #ff3b32;
+  --ifm-code-font-size: 0.88em;
+  --ifm-code-padding-horizontal: 0.4rem;
+  --ifm-code-padding-vertical: 0.1rem;
+
+  --ifm-hr-border-color: rgba(200, 200, 200, 0.25);
+  --ifm-toc-border-color: rgba(200, 200, 200, 0.25);
+
+  --ifm-container-width: 1280px;
+  --ifm-container-width-xl: 1280px;
+
+  --ifm-heading-color: #f2f0ea;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 59, 50, 0.12);
+}
+
+/* ===== Base ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--paper);
+  font-family: var(--sans);
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--void);
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+p {
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--display);
+  letter-spacing: -0.045em;
+}
+
+/* ===== Container width matches .shell ===== */
+
+.container {
+  max-width: var(--max) !important;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* ===== Navbar — match .site-header ===== */
+
+.navbar {
+  background-color: var(--void);
+  border-bottom: 1px solid var(--line-soft);
+  border-top: 2px solid var(--paper);
+  box-shadow: none;
+  padding: 20px 28px;
+}
+
+.navbar__inner {
+  margin: 0 auto;
+  max-width: var(--max);
+}
+
+.navbar__brand {
+  margin-right: auto;
+}
+
+.navbar__title {
+  color: var(--paper);
+  font: 600 1.17rem var(--display);
+  letter-spacing: -0.045em;
+}
+
+.navbar__title::after {
+  color: var(--red);
+  content: '// SECURITY RESEARCH';
+  display: inline-block;
+  font: 500 0.66rem var(--mono);
+  letter-spacing: 0.08em;
+  margin-left: 13px;
+  padding-top: 5px;
+  vertical-align: middle;
+}
+
+.navbar__items--right {
+  gap: 23px;
+}
+
+.navbar__link {
+  color: var(--line);
+  font: 500 0.68rem var(--mono);
+  letter-spacing: 0.06em;
+  padding: 0;
+  text-transform: none;
+  transition: color 160ms ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--red);
+}
+
+.navbar-sidebar__brand {
+  background-color: var(--void);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.navbar-sidebar {
+  background-color: var(--void);
+}
+
+.navbar-sidebar__items .menu__link {
+  color: var(--line);
+  font: 500 0.85rem var(--mono);
+  letter-spacing: 0.05em;
+}
+
+.navbar-sidebar__items .menu__link:hover,
+.navbar-sidebar__items .menu__link--active {
+  background: transparent;
+  color: var(--red);
+}
+
+.navbar__toggle {
+  color: var(--red);
+}
+
+/* ===== Footer — match status-bar feel ===== */
+
+.footer {
+  background-color: var(--void);
+  border-top: 1px solid var(--line-soft);
+  color: var(--grey);
+  padding: 24px 28px;
+}
+
+.footer__copyright {
+  color: var(--grey);
+  font: 0.62rem var(--mono);
+  letter-spacing: 0.08em;
+  text-align: left;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* ===== Reusable cyber-brutalist primitives (used by custom React components) ===== */
+
+.panel-id,
+.page-label,
+.eyebrow,
+.tag,
+.publication-state {
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.panel-id,
+.page-label,
+.eyebrow {
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.page-label {
+  margin: 0 0 18px;
+}
+
+.status-bar {
+  align-items: center;
+  color: var(--grey);
+  display: flex;
+  font: 0.62rem var(--mono);
+  gap: 18px;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  margin-bottom: 42px;
+  padding-top: 12px;
+}
+
+.status-online {
+  color: var(--red);
+}
+
+.status-online::before {
+  background: var(--red);
+  content: '';
+  display: inline-block;
+  height: 7px;
+  margin-right: 7px;
+  width: 7px;
+}
+
+.page-hero {
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  gap: 50px;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  margin-bottom: 40px;
+  padding: 32px 0 48px;
+}
+
+.page-hero > * {
+  min-width: 0;
+}
+
+.page-title {
+  font: 700 clamp(3.25rem, 7vw, 6.5rem) / 0.88 var(--display);
+  letter-spacing: -0.072em;
+  margin: 0;
+}
+
+.page-intro {
+  color: var(--line);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  margin: 25px 0 0;
+  max-width: 650px;
+}
+
+.page-side {
+  align-self: end;
+  border: 1px solid var(--line-soft);
+  padding: 18px;
+  position: relative;
+}
+
+.page-side::after {
+  border-right: 2px solid var(--red);
+  border-top: 2px solid var(--red);
+  content: '';
+  height: 11px;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  width: 11px;
+}
+
+.meta-list {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.meta-list div {
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 92px 1fr;
+  padding: 11px 0;
+}
+
+.meta-list div:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.meta-list dt {
+  color: var(--grey);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta-list dd {
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* Hide the Docusaurus navbar on the blog list (landing) page only.
+   The chip+ticks banner replaces it visually; individual post pages keep the
+   navbar so readers can still get back to the rest of the site. */
+.blog-list-page .navbar {
+  display: none;
+}
+
+/* ===== Blog hero banner (chip + ticks + breadcrumb + about) ===== */
+
+.blog-hero {
+  margin: 28px 0 8px;
+}
+
+.blog-hero__banner {
+  align-items: stretch;
+  display: flex;
+  gap: 10px;
+  height: 56px;
+  margin-bottom: 28px;
+}
+
+.blog-hero__chip {
+  align-items: center;
+  background: var(--red);
+  color: var(--void);
+  display: inline-flex;
+  font: 700 1.05rem var(--display);
+  letter-spacing: -0.03em;
+  padding: 0 18px;
+  white-space: nowrap;
+}
+
+.blog-hero__ticks {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--red) 0,
+    var(--red) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  background-position: left center;
+  background-repeat: repeat-x;
+  background-size: 14px 26px;
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-hero__breadcrumb {
+  color: var(--line);
+  font: 0.82rem var(--mono);
+  letter-spacing: 0.02em;
+  margin-bottom: 38px;
+}
+
+.blog-hero__breadcrumb a {
+  color: var(--paper);
+}
+
+.blog-hero__breadcrumb a:hover {
+  color: var(--red);
+}
+
+.blog-hero__about {
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 8px;
+  padding-bottom: 40px;
+}
+
+.blog-hero__eyebrow {
+  color: var(--red);
+  font: 600 0.68rem var(--mono);
+  letter-spacing: 0.08em;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.blog-hero__title {
+  font: 700 clamp(1.9rem, 3.6vw, 2.6rem) / 1.12 var(--display);
+  letter-spacing: -0.04em;
+  margin: 0 0 22px;
+  max-width: 820px;
+}
+
+.blog-hero__body p {
+  color: var(--line);
+  font-size: 1rem;
+  margin: 0 0 14px;
+  max-width: 760px;
+}
+
+.blog-hero__body p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-hero__body a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===== Blog list + post styling ===== */
+
+main[class*='docMainContainer'],
+main[class*='blogListPage'],
+main[class*='blogPostPage'] {
+  padding: 0;
+}
+
+/* Blog list page wrapper */
+main .container .row {
+  margin: 0;
+}
+
+/* Each post card on the list */
+article {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 36px 0 40px;
+  margin: 0;
+}
+
+article header h2 a,
+article header h2 {
+  color: var(--paper);
+  font: 700 clamp(1.5rem, 2.6vw, 1.95rem) / 1.2 var(--display);
+  letter-spacing: -0.04em;
+}
+
+article header h2 a:hover {
+  color: var(--red);
+}
+
+/* Dotted divider directly under the post title */
+article > header > h2 {
+  border-bottom: 1px dashed var(--line-soft);
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+}
+
+/* Date row beneath the dotted divider */
+article header time {
+  color: var(--grey);
+  display: inline-block;
+  font: 0.82rem var(--mono);
+  letter-spacing: 0.02em;
+}
+
+/* Hide reading-time / author chips on the list — keep the card lean */
+article header [class*='blogPostDetailsFull'],
+article header [class*='authorCol'],
+article header [class*='avatar'] {
+  display: none;
+}
+
+/* Spacing between the date row and the tag row */
+article > header {
+  margin-bottom: 14px;
+}
+
+.markdown h1:first-child {
+  font: 700 clamp(2.4rem, 5vw, 3.6rem) / 0.95 var(--display);
+  letter-spacing: -0.06em;
+  margin-bottom: 0.6em;
+}
+
+.markdown h2 {
+  border-top: 1px solid var(--line-soft);
+  font: 600 clamp(1.4rem, 2.5vw, 1.85rem) var(--display);
+  letter-spacing: -0.04em;
+  margin-top: 2.4em;
+  padding-top: 1em;
+}
+
+.markdown h3 {
+  font: 600 1.22rem var(--display);
+  letter-spacing: -0.035em;
+}
+
+.markdown a {
+  color: var(--red);
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown > p,
+.markdown li {
+  color: var(--line);
+}
+
+.markdown code {
+  background: var(--red-soft);
+  color: var(--red);
+  font-family: var(--mono);
+  padding: 1px 6px;
+}
+
+.markdown pre {
+  background: #0a0a0c;
+  border: 1px solid var(--line-soft);
+}
+
+.markdown blockquote {
+  border-left: 2px solid var(--red);
+  color: var(--line);
+}
+
+/* Tags on blog posts — hashtag style links */
+ul[class*='tags_'] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  list-style: none;
+  margin: 14px 0 18px;
+  padding: 0;
+}
+
+ul[class*='tags_'] li {
+  margin: 0;
+  padding: 0;
+}
+
+a[class*='tag_'] {
+  background: transparent;
+  border: 0;
+  color: var(--red);
+  font: 0.92rem var(--mono);
+  letter-spacing: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 59, 50, 0.55);
+  text-transform: none;
+  text-underline-offset: 4px;
+}
+
+a[class*='tag_']::before {
+  content: '#';
+}
+
+a[class*='tag_']:hover {
+  border: 0;
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
+
+/* "[Read more]" link in the post-card footer */
+a[class*='readMoreLink'] {
+  color: var(--red);
+  display: inline-block;
+  font: 0.95rem var(--mono);
+  letter-spacing: 0;
+  margin-top: 18px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 59, 50, 0.55);
+  text-underline-offset: 4px;
+  font-size: 0;
+}
+
+a[class*='readMoreLink']::before {
+  content: '[Read more]';
+  font-size: 0.95rem;
+}
+
+a[class*='readMoreLink']:hover {
+  text-decoration-color: var(--red);
+}
+
+/* Pagination links at bottom of blog list */
+nav[class*='paginator'] a,
+.pagination-nav__link {
+  border: 1px solid var(--line-soft);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.pagination-nav__sublabel {
+  color: var(--grey);
+}
+
+/* Table of contents */
+.table-of-contents__link {
+  color: var(--grey);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--red);
+}
+
+/* Author chip on post */
+[class*='authorCol'] [class*='authorBlogPost'] {
+  color: var(--line);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+/* ===== Responsive — match site.css breakpoints ===== */
+
+@media (max-width: 1020px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .page-side {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 820px) {
+  .navbar__items--right {
+    gap: 0;
+  }
+
+  .status-bar {
+    margin-bottom: 22px;
+  }
+
+  .blog-hero__banner {
+    height: 48px;
+  }
+
+  .blog-hero__chip {
+    font-size: 0.92rem;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .navbar {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .status-bar span:nth-child(2),
+  .status-bar span:nth-child(3) {
+    display: none;
+  }
+
+  .blog-hero__about {
+    padding-bottom: 28px;
+  }
+}
