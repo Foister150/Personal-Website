@@ -5,6 +5,9 @@
   const promptTop = document.getElementById("term-prompt-top");
   const promptPrefix = document.getElementById("term-prompt-prefix");
   if (!screen || !form || !input || !promptTop || !promptPrefix) return;
+  // The scroll container wraps both the log and the live prompt so the prompt
+  // sits directly under the last command's output. Fall back to screen if absent.
+  const body = document.getElementById("term-body") || screen;
 
   const SUBNET = "10.10.20.0/24";
   const FLAG = "flag{coordinate_foister}";
@@ -143,7 +146,7 @@
   };
 
   const scrollToBottom = () => {
-    screen.scrollTop = screen.scrollHeight;
+    body.scrollTop = body.scrollHeight;
   };
 
   const tokenize = (raw) => {
@@ -692,7 +695,7 @@
     }
   });
 
-  screen.addEventListener("click", () => {
+  body.addEventListener("click", () => {
     if (window.getSelection && window.getSelection().toString()) return;
     input.focus();
   });

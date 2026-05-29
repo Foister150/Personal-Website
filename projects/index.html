@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/site.css?v=6">
+    <link rel="stylesheet" href="/assets/site.css?v=7">
     <script src="/assets/site.js?v=2" defer></script>
-    <script src="/assets/terminal.js?v=2" defer></script>
+    <script src="/assets/terminal.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -67,15 +67,17 @@
             <span class="term-status">LIVE / SANDBOX</span>
           </header>
           <p class="term-hint">Type <code>help</code> to see what's installed. Objective: retrieve the flag from the hosts on 10.10.20.0/24 using username: <code>root</code> and password: <code>password</code>.</p>
-          <div class="term-screen" id="term-screen" role="log" aria-live="polite" aria-label="Terminal output"></div>
-          <form class="term-prompt-line" id="term-form" autocomplete="off">
-            <div class="term-prompt-top" id="term-prompt-top" aria-hidden="true"></div>
-            <div class="term-prompt-bottom">
-              <span class="term-prompt-prefix" id="term-prompt-prefix" aria-hidden="true"></span>
-              <label class="visually-hidden" for="term-input">Terminal input</label>
-              <input class="term-input" id="term-input" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Terminal input">
-            </div>
-          </form>
+          <div class="term-body" id="term-body">
+            <div class="term-screen" id="term-screen" role="log" aria-live="polite" aria-label="Terminal output"></div>
+            <form class="term-prompt-line" id="term-form" autocomplete="off">
+              <div class="term-prompt-top" id="term-prompt-top" aria-hidden="true"></div>
+              <div class="term-prompt-bottom">
+                <span class="term-prompt-prefix" id="term-prompt-prefix" aria-hidden="true"></span>
+                <label class="visually-hidden" for="term-input">Terminal input</label>
+                <input class="term-input" id="term-input" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+              </div>
+            </form>
+          </div>
         </article>
         <article class="panel project-feature" id="home-lab">
           <div>
