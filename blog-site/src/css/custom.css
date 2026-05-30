@@ -197,6 +197,66 @@ h1, h2, h3, h4, h5, h6 {
   padding: 24px 28px;
 }
 
+.footer__links {
+  max-width: var(--max);
+  margin: 0 auto 22px;
+}
+
+.footer__title {
+  color: var(--grey);
+  font: 500 0.62rem var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer__item {
+  margin: 0;
+}
+
+.footer .footer__link-item {
+  align-items: center;
+  border: 1px solid var(--line);
+  color: var(--paper);
+  display: inline-flex;
+  font: 600 0.72rem var(--mono);
+  gap: 9px;
+  letter-spacing: 0.1em;
+  padding: 12px 17px;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.footer .footer__link-item svg {
+  display: none;
+}
+
+.footer .footer__link-item::after {
+  color: var(--red);
+  content: '\2197';
+  font-size: 0.85em;
+  transition: color 160ms ease;
+}
+
+.footer .footer__link-item:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--void);
+  text-decoration: none;
+}
+
+.footer .footer__link-item:hover::after {
+  color: var(--void);
+}
+
 .footer__copyright {
   color: var(--grey);
   font: 0.62rem var(--mono);
@@ -331,10 +391,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* Hide the Docusaurus navbar on the blog list (landing) page only.
-   The chip+ticks banner replaces it visually; individual post pages keep the
-   navbar so readers can still get back to the rest of the site. */
-.blog-list-page .navbar {
+/* Hide the Docusaurus navbar on the blog list (landing) page and on
+   individual blog post pages. The footer's social links + breadcrumbs still
+   provide a way back to the rest of the site. */
+.blog-list-page .navbar,
+.blog-post-page .navbar {
   display: none;
 }
 

@@ -348,6 +348,78 @@ p {
   color: var(--void);
 }
 
+/* ===== Site footer — social links ===== */
+
+.site-footer {
+  border-top: 2px solid var(--paper);
+  margin-top: 96px;
+}
+
+.site-footer .shell {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  padding-bottom: 44px;
+  padding-top: 34px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.footer-name {
+  font: 600 1.05rem var(--display);
+  letter-spacing: -0.04em;
+}
+
+.footer-tag {
+  color: var(--grey);
+  font: 500 0.62rem var(--mono);
+  letter-spacing: 0.16em;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-socials a {
+  align-items: center;
+  border: 1px solid var(--line);
+  color: var(--paper);
+  display: inline-flex;
+  font: 600 0.72rem var(--mono);
+  gap: 9px;
+  letter-spacing: 0.1em;
+  padding: 12px 17px;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.footer-socials a::after {
+  color: var(--red);
+  content: "\2197";
+  font-size: 0.85em;
+  transition: color 160ms ease;
+}
+
+.footer-socials a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--void);
+}
+
+.footer-socials a:hover::after {
+  color: var(--void);
+}
+
 .hero-lede {
   color: var(--line);
   font-size: clamp(1rem, 1.3vw, 1.13rem);
@@ -1126,6 +1198,12 @@ p {
   .shell {
     padding-left: 17px;
     padding-right: 17px;
+  }
+
+  .site-footer .shell {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .site-header .shell {

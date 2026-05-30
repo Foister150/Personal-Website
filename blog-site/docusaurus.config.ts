@@ -75,6 +75,17 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'FIND ME ON',
+          items: [
+            {label: 'Email', href: 'mailto:foisterlandon@gmail.com'},
+            {label: 'LinkedIn', href: 'https://linkedin.com/in/landon-foister/'},
+            {label: 'GitHub', href: 'https://github.com/Foister150'},
+            {label: 'Hack The Box', href: 'https://app.hackthebox.com/users/1335548'},
+          ],
+        },
+      ],
       copyright: `EDITORIAL CHANNEL / READY · POSTS // 001 · © ${new Date().getFullYear()} LANDON FOISTER`,
     },
     prism: {
